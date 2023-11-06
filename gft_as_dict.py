@@ -83,5 +83,5 @@ if __name__ == "__main__":
     if args.out:
         out = args.out
     
-    gtf_as_dict(gtf=args.gtf, out=out, biot_field=args.biotype, trans_s_field=args.trans_symbol, gene_s_field=args.gene_symbol)
+    gtf_as_dict(gtf_file=args.gtf, out=out, biot_field=args.biotype, trans_s_field=args.trans_symbol, gene_s_field=args.gene_symbol)
   
