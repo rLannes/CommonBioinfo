@@ -74,5 +74,5 @@ if __name__ == "__main__":
   out = None
   if args.out:
     out = args.out
-  gtf_as_dict(args.gtf. out)
+  gtf_as_dict(args.gtf, out)
   
