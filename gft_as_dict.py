@@ -78,10 +78,10 @@ if __name__ == "__main__":
     parser.add_argument('-gene_symbol', default="gene_name")
     # parser.add_argument('-biotype', default="gene_biotype")
     # parser.add_argument('-biotype', default="gene_biotype")
+    args = parser.parse_args()
+    out = None
+    if args.out:
+        out = args.out
     
-  args = parser.parse_args()
-  out = None
-  if args.out:
-    out = args.out
-  gtf_as_dict(args.gtf, args.main_f , out, biot_field=args.biotype, trans_s_field=args.trans_symbol, gene_s_field=args.gene_symbol)
+    gtf_as_dict(args.gtf, out, biot_field=args.biotype, trans_s_field=args.trans_symbol, gene_s_field=args.gene_symbol)
   
