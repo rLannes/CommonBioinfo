@@ -67,7 +67,7 @@ def gtf_as_dict(gtf_file, out=None):
     return dico
 
 if __name__ == "__main__":
-  parse = argparse.ArgumentParser()
+  parser = argparse.ArgumentParser()
   parser.add_argument('--gtf', "-gtf")   
   parser.add_argument('--out', '-out')
   args = parser.parse_args()
