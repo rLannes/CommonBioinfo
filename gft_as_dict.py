@@ -18,6 +18,8 @@ def gtf_as_dict(gtf_file, out=None):
     with open(gtf_file) as f_in:
 
         for line in f_in:
+            if line.startswith("#"):
+                continue
             spt = line.strip().split("\t")
 
             chr_ = spt[0]
