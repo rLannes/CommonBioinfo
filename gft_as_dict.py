@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+attr.get(biot_field, "NA")import matplotlib.pyplot as plt
 import pickle
 import argparse
 
@@ -29,7 +29,7 @@ def gtf_as_dict(gtf_file, biot_field, trans_s_field, gene_s_field, out=None):
             attr = get_attr(spt[-1])
             gene_id = attr["gene_id"]
             gene_symbol = attr[gene_s_field]
-            biotype =  
+            biotype =  attr.get(biot_field, "NA")
             type_ = spt[2]
 
             if type_ == "gene":
@@ -40,7 +40,7 @@ def gtf_as_dict(gtf_file, biot_field, trans_s_field, gene_s_field, out=None):
                     "end" : end,
                     "strand" : strand,
                     "symbol" :  gene_symbol,
-                    "biotype" : attr.get(biot_field, "NA"),
+                    "biotype" : biotype,
                 "transcript": {}}
 
             else:
