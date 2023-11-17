@@ -7,8 +7,12 @@ def get_attr(string):
     spt = string.split(";")
     
     for x in spt:
-        if x:
+        if x not in dico:
             dico[x.split()[0]] =  x.split()[1].replace('"', "")
+        else:
+            dico[x.split()[0]] = [dico[x.split()[0]]]
+            dico[x.split()[0]].append(x.split()[1].replace('"', ""))
+            
     return dico
 
 
