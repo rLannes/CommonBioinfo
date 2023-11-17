@@ -1,4 +1,4 @@
-attr.get(biot_field, "NA")import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import pickle
 import argparse
 
