@@ -45,7 +45,8 @@ def gtf_as_dict(gtf_file, biot_field, trans_s_field, gene_s_field, out=None):
                     "strand" : strand,
                     "symbol" :  gene_symbol,
                     "biotype" : biotype,
-                "transcript": {}}
+                "transcript": {},
+                "attr":attr}
 
             else:
 
@@ -66,6 +67,7 @@ def gtf_as_dict(gtf_file, biot_field, trans_s_field, gene_s_field, out=None):
                     "start": start, 
                     "end" : end,
                     "strand" : strand,
+                    "attr" : attr
                 })
             
             if out:
