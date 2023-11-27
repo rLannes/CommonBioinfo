@@ -1,0 +1,37 @@
+
+def get_seq_one_by_one(open_file, position=None):
+    """
+
+    An Iterator over an opened fasta file
+    :param open_file: an open fasta file
+    :return: tuple(prompt, sequence)
+    """
+
+    pos = 0
+    p, seq = "", ""
+    line = open_file.readline()
+    while line:
+
+        if line.startswith('>'):
+
+            if seq:
+
+                if not position:
+                    yield p, seq
+                else:
+                    yield p, seq, pos
+                p, seq = "", ""
+
+            p = line[1:].strip()
+
+        else:
+            seq += line.strip()
+            pos = open_file.tell()
+        line = open_file.readline()
+
+    if not position:
+        yield p, seq
+    else:
+        yield p, seq, pos
+
+
